@@ -1,6 +1,7 @@
 ## Ranking de Games <Data Mart>
 # Os principais lançamentos entre 1972 e 2020
 ### Autor: Célio Júnior (celiojr.dev@gmail.com)
+### Profª. Ellen Souza | Sistemas de Apoio à Decisão | UFRPE - UAST | 2023
 
 ## Contexto
 Durante o período entre 1972 e 2020, a indústria de jogos eletrônicos passou por um incrível desenvolvimento. O início modesto nos arcades e nos consoles domésticos evoluiu para um mercado global multi-bilionário, abrangendo diversos gêneros, plataformas e públicos. Avanços tecnológicos significativos, como gráficos 3D, jogos online e dispositivos móveis, moldaram essa evolução. A indústria deixou de ser um nicho para se tornar uma parte intrínseca da cultura popular, impactando a forma como nos entretemos e interagimos.
@@ -17,15 +18,15 @@ Esse Data Mart foi desenvolvido utilizando a versão open-source do metabase, po
 
 ## Configurando o banco
 O arquivo de dump é um backup de toda a estrutura do banco de dados, 
-1. Importar o arquivo de dump "sad_project_dump.sql" que está presente na raíz do repositório.
+1. Importar o arquivo de dump "sad_project_dump.sql" que está presente em "./dados/transformados/".
 2. O dump foi criado sem especificar um owner, então utilize os seguintes comandos para adicionar um ao database e dar todas as permissões para ele:
     - ```ALTER DATABASE nome_do_database OWNER TO nome_do_usuario;```;
     - ```GRANT ALL PRIVILEGES ON DATABASE nome_do_database to nome_do_usuario;```.
 
 ## Configurando o Metabase
-1. Baixe o Metabase open-source (https://www.metabase.com/start/oss/) e coloque na pasta "./Metabase" na raíz do repositório.
+1. Baixe o Metabase open-source (https://www.metabase.com/start/oss/) e coloque na pasta "./metabase" na raíz do repositório.
 2. Inicialize o Metabase utilizando java (versão testada: java 20.0.2 2023-07-18) com os seguintes comandos:
-    - Navegue para Metabase, utilizando ```cd ./Metabase```;
+    - Navegue para Metabase, utilizando ```cd ./metabase```;
     - Inicie o servidor, utilizando: ```java -jar ./metabase.jar```;
 3. O Metabase por padrão roda em http://localhost:3000, abra esse link no navegador.
 4. Você será redirecionado para a tela de login, as credenciais de acesso são:
@@ -35,7 +36,7 @@ O arquivo de dump é um backup de toda a estrutura do banco de dados,
     - Clique na engrenagem (Canto superior direito), vai abrir um submenu contendo algumas opções;
     - Clique em "Admin settings";
     - Na aba Database, clique no banco "SAD Project";
-    - Altere as configurações de conexão do banco para atender às suas necessidades;
+    - Altere as configurações de conexão do banco para atender às suas necessidades e depois em "Save";
     - Clique no botão "Sync database scheme now" para atualizar o esquema do database;
     - Clique no botão "Re-scan field values now" para atualizar os campos do database;
     - Ao voltar para a tela principal, clicando em "Exit Admin" (Canto supeiror direito), navegue até "Your personal collection"
